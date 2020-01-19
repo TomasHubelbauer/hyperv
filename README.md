@@ -6,6 +6,10 @@
 
 Open a new PowerShell prompt with administrator access and run `script.ps1`.
 
+## Resources
+
+https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/try-hyper-v-powershell
+
 ## To-Do
 
 ### Patch the ISO or find another way to make the installation unattended
@@ -31,25 +35,10 @@ the ISO file before mounting it to the VM so this file is included.
 Could be either a VM per script or even a single Windows VM used by all scripts
 which is snapshot once and then always restored to the previous state.
 
-### Try creating and destroying Hyper-V Windows machines using PowerShell
+### Finalize creating and destroying Hyper-V Windows machines using PowerShell
 
-https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/try-hyper-v-powershell
-
-- [ ] Mount the ISO to the VM
-- [ ] Install Windows 10 from the ISO
+- [ ] Install Windows 10 from the ISO in an unattended mode
 - [ ] Configure the VM (copy/mount data and script, run script)
 - [ ] Take out data from the VM
 - [ ] Close and destroy the VM
-
-Measure how long all this will take.
-
-### Wait for new ISO version and check if the FWLINK URL is the same
-
-https://www.microsoft.com/en-us/software-download/windows10
-
-Currently the URL is https://go.microsoft.com/fwlink/?LinkId=691209
-It corresponds to `MediaCreationTool1909.exe`.
-
-### Check out the options for controlling the Windows installer using the CLI
-
-https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-setup-command-line-options
+- [ ] Measure how long all this takes
