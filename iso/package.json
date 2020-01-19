@@ -1,8 +1,0 @@
-{
-  "scripts": {
-    "start": "node ."
-  },
-  "dependencies": {
-    "puppeteer": "^2.0.0"
-  }
-}
