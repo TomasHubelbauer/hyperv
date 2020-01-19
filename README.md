@@ -22,6 +22,9 @@ the ISO file before mounting it to the VM so this file is included.
 - https://stackoverflow.com/a/56869316/2715716
 - https://hinchley.net/articles/update-an-iso-using-powershell
 - https://gist.github.com/jonathanelbailey/c021fe5791d8baf42e7924215f2502cd
+- https://devblogs.microsoft.com/scripting/use-powershell-to-create-a-bootable-usb-drive
+- https://mikefrobbins.com/2018/01/18/use-powershell-to-create-a-bootable-usb-drive-from-a-windows-10-or-windows-server-2016-iso
+- https://winaero.com/blog/powershell-windows-10-bootable-usb
 
 ---
 
