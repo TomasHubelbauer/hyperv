@@ -12,6 +12,12 @@ https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/t
 
 ## To-Do
 
+### Download and use NTLite to make bootable unattended ISO
+
+`ntlite /?`
+
+![](ntlite.png)
+
 ### Resolve the ISO DVD boot issue
 
 https://stackoverflow.com/q/60233321/2715716
@@ -22,8 +28,6 @@ VM.
 ### Simulare keyboard and mouse as an easier alternative to unattended install
 
 https://stackoverflow.com/a/44764880/2715716
-
-### Consider downloading and using Rufus and NTLite to make bootable unattended ISO
 
 ### Patch the ISO or find another way to make the installation unattended
 
