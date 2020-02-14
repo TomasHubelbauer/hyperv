@@ -12,6 +12,12 @@ https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/t
 
 ## To-Do
 
+### Simulare keyboard and mouse as an easier alternative to unattended install
+
+https://stackoverflow.com/a/44764880/2715716
+
+### Consider downloading and using Rufus and NTLite to make bootable unattended ISO
+
 ### Patch the ISO or find another way to make the installation unattended
 
 **https://www.windowsafg.com/win10x86_x64_uefi.html**
@@ -45,3 +51,7 @@ which is snapshot once and then always restored to the previous state.
 - [ ] Take out data from the VM
 - [ ] Close and destroy the VM
 - [ ] Measure how long all this takes
+
+### Check this out
+
+https://www.shahradjafari.com/batch-files-unattended-windows-installation-take-care-additional-work/

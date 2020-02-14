@@ -24,10 +24,15 @@ Else {
 $vmName = "vm"
 
 # TODO: Remove this when setting up the VM and installing Windows is completed
-Remove-VM -Name $vmName -Force -Confirm:$false
-Remove-Item -Path $vmName -Force -Recurse -Confirm:$false
+$vm = Get-VM | Where-Object {$_.Name -eq $vmName}
+If ($vm) {
+  Write-Output "Removing Windows 10 VM"
+  Remove-VM -Name $vmName -Force -Confirm:$false
+  Remove-Item -Path $vmName -Force -Recurse -Confirm:$false
+}
 
-If (!(Get-VM -Name $vmName)) {
+$vm = Get-VM | Where-Object {$_.Name -eq $vmName}
+If (!$vm) {
   # Create the Windows 10 VM if it doesn't exist already
   Write-Output "Creating Windows 10 VM"
 
