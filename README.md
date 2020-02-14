@@ -12,6 +12,10 @@ https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/t
 
 ## To-Do
 
+### Resolve the ISO DVD boot issue
+
+https://stackoverflow.com/q/60233321/2715716
+
 ### Simulare keyboard and mouse as an easier alternative to unattended install
 
 https://stackoverflow.com/a/44764880/2715716

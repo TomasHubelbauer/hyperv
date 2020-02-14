@@ -27,6 +27,7 @@ $vmName = "vm"
 $vm = Get-VM | Where-Object {$_.Name -eq $vmName}
 If ($vm) {
   Write-Output "Removing Windows 10 VM"
+  Stop-VM -Name $vmName -Force -Confirm:$false
   Remove-VM -Name $vmName -Force -Confirm:$false
   Remove-Item -Path $vmName -Force -Recurse -Confirm:$false
 }
@@ -36,13 +37,26 @@ If (!$vm) {
   # Create the Windows 10 VM if it doesn't exist already
   Write-Output "Creating Windows 10 VM"
 
-  # TODO: See if I need to add `-MemoryStartupBytes 2GB` or if the 512MB will suffice
+  # TODO: See if I need to add `-MemoryStartupBytes 4GB` or if the default 512MB will suffice
   # TODO: See if I need to add `-SwitchName (Get-VMSwitch).Name` to access the Internet
-  New-VM -Name $vmName -NewVHDPath "$vmName.vhdx" -NewVHDSizeBytes 2GB -Path $vmName -Generation 2
+  New-VM -Name $vmName -NewVHDPath "$vmName.vhdx" -NewVHDSizeBytes 64GB -MemoryStartupBytes 8GB -Path $vmName -Generation 2
+
+  # TODO: Remove this - tried to see if not booting was caused by low minimal memory (512MB) in dynamic memory mode
+  Set-VMMemory -VMName $vmName -DynamicMemoryEnabled $false
 
   # Attach the Windows 10 ISO as a DVD drive to the VM
   Add-VMDvdDrive -VMName $vmName -Path $isoName
+
+  # Set correct boot order (DVD drive first)
+  $dvd = Get-VMDVDDrive -VMName $vmName
+  Set-VMFirmware -VMName $vmName -FirstBootDevice $dvd
 }
 Else {
   Write-Output "Windows 10 VM already created"
 }
+
+Write-Output "Staring Windows 10 VM"
+Start-VM -Name $vmName
+
+Write-Output "Connecting to Windows VM"
+vmconnect $env:COMPUTERNAME $vmName
