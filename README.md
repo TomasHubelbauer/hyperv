@@ -15,6 +15,9 @@ https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/t
 ### Resolve the ISO DVD boot issue
 
 https://stackoverflow.com/q/60233321/2715716
+Actually this might be because a key is not held down during boot, I might be
+able to solve it by doing the below - simulating mouse and keyboard input to the
+VM.
 
 ### Simulare keyboard and mouse as an easier alternative to unattended install
 
