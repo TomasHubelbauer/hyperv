@@ -1,14 +1,15 @@
 # Download the Windows 10 ISO from the Microsoft website unless already present
 $isoName = "win.iso"
-If (!(Test-Path win.iso)) {
-  If (!(Test-Path win.url)) {
+If (!(Test-Path $isoName)) {
+  $urlName = "win.url"
+  If (!(Test-Path $urlName)) {
     Write-Output "Scraping Windows 10 ISO download URL"
     # TODO: Report a rate limit error on error here
     $winIsoUrl = $(npx https://github.com/TomasHubelbauer/win-iso-url)
   }
   Else {
     Write-Output "Windows 10 ISO download URL already scraped"
-    $winIsoUrl = Get-Content win.url
+    $winIsoUrl = Get-Content $urlName
   }
 
   Write-Output "Downloading Windows 10 ISO"
@@ -19,6 +20,15 @@ If (!(Test-Path win.iso)) {
 }
 Else {
   Write-Output "Windows 10 ISO already downloaded"
+}
+
+$isoUnattendedName = "win-unattended.iso"
+If (!(Test-Path $isoUnattendedName)) {
+  Write-Output "Obtaining NTLite"
+  exit
+}
+Else {
+  Write-Output "Windows 10 ISO unattended already converted"
 }
 
 $vmName = "vm"
