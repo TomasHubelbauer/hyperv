@@ -12,43 +12,22 @@ https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/t
 
 ## To-Do
 
-### Download and use NTLite to make bootable unattended ISO
+### Try next steps:
 
-`ntlite /?`
-
-![](ntlite.png)
-
-### Resolve the ISO DVD boot issue
-
-https://stackoverflow.com/q/60233321/2715716
-Actually this might be because a key is not held down during boot, I might be
-able to solve it by doing the below - simulating mouse and keyboard input to the
-VM.
-
-### Simulare keyboard and mouse as an easier alternative to unattended install
-
-https://stackoverflow.com/a/44764880/2715716
-
-### Patch the ISO or find another way to make the installation unattended
-
-**https://www.windowsafg.com/win10x86_x64_uefi.html**
-
-Generate this file and store it with the repository, then figure out how to patch
-the ISO file before mounting it to the VM so this file is included.
-
-- https://stackoverflow.com/a/56869316/2715716
-- https://hinchley.net/articles/update-an-iso-using-powershell
-- https://gist.github.com/jonathanelbailey/c021fe5791d8baf42e7924215f2502cd
-- https://devblogs.microsoft.com/scripting/use-powershell-to-create-a-bootable-usb-drive
-- https://mikefrobbins.com/2018/01/18/use-powershell-to-create-a-bootable-usb-drive-from-a-windows-10-or-windows-server-2016-iso
-- https://winaero.com/blog/powershell-windows-10-bootable-usb
-
----
-
-- https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/automate-windows-setup
-- https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/update-windows-settings-and-scripts-create-your-own-answer-file-sxs
-- https://www.windowscentral.com/how-create-unattended-media-do-automated-installation-windows-10
-- https://www.tenforums.com/tutorials/96683-create-media-automated-unattended-install-windows-10-a.html
+1. Finish NTLite unattended script `unattend.ps1`
+  - I did a manual NTLite configuration and exported the preset in `preset.xml`
+  - It's unclear how to make it automatically select the sole disk for full unattendedness
+  - The VM installed from `win-unattended.iso` made manually freezes during login
+  - It's unclear if I can make the Administrator used password blank (might be causing the freeze)
+  - It's unclear if since I'm removing unused editions the index should be 6 or 0
+  - It's unclear whether it is safe to post the now-scrubbed UUIDs in `preset.xml`
+    - The original file is in `iso/preset.xml`
+2. Try to fix automated botting to the ISO by sending a space bar press to the VM
+   - Otherwise it skips past the *Press any key to boot* screen and fails to boot
+   - It might be possible to do that thru Hyper-V PS commands or Hyper-V WMI
+   - Since the VM connection is RDP it might also be possible to do using RDP
+   - Or maybe Windows API could be used to send a fake keypress to the VM window
+   - More on Hyper-V simulation here: https://stackoverflow.com/a/44764880/2715716
 
 #### Reuse the VM by making a snapshot after install and restoring after run
 
@@ -65,4 +44,4 @@ which is snapshot once and then always restored to the previous state.
 
 ### Check this out
 
-https://www.shahradjafari.com/batch-files-unattended-windows-installation-take-care-additional-work/
+https://www.shahradjafari.com/batch-files-unattended-windows-installation-take-care-additional-work

@@ -3,7 +3,8 @@ vm
 
 # The script
 win.iso
-7z*
+7z.dll
+7z.exe
 iso
 ntlite
 win-unattended.iso
