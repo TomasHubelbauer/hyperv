@@ -16,6 +16,8 @@ https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/t
 
 Also https://gallery.technet.microsoft.com/scriptcenter/Convert-WindowsImageps1-0fe23a8f
 
+And https://deploymentbunny.com/2013/12/19/powershell-is-king-convert-wim-to-vhdvhdx-with-support-for-gen-1-and-gen-2-biosuefi-and-then-some/
+
 ### Try next steps:
 
 1. Finish NTLite unattended script `unattend.ps1`
