@@ -14,6 +14,8 @@ https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/t
 
 ### Check out https://github.com/smourier/VIM2VHD
 
+Also https://gallery.technet.microsoft.com/scriptcenter/Convert-WindowsImageps1-0fe23a8f
+
 ### Try next steps:
 
 1. Finish NTLite unattended script `unattend.ps1`
