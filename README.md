@@ -12,6 +12,8 @@ https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/t
 
 ## To-Do
 
+### Check out https://github.com/smourier/VIM2VHD
+
 ### Try next steps:
 
 1. Finish NTLite unattended script `unattend.ps1`
