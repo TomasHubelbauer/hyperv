@@ -12,6 +12,10 @@ https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/t
 
 ## To-Do
 
+### Await activity on the SO question
+
+https://stackoverflow.com/q/61144238/2715716
+
 ### Check out https://github.com/smourier/VIM2VHD
 
 Also https://gallery.technet.microsoft.com/scriptcenter/Convert-WindowsImageps1-0fe23a8f
